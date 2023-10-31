@@ -1,6 +1,6 @@
 import { FieldValues } from "@/types";
 import { Card, Heading } from "@radix-ui/themes";
-import AnecdotalNotes from "./AnecdotalNotes";
+import AnecdotalNotes from "@/components/StudentAnecdotals";
 
 const StudentAnecdotals = ({ fields }: { fields: FieldValues[] }) => {
   return (

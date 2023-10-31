@@ -1,6 +1,6 @@
 "use client";
-import StudentAnecdotals from "@/app/components/StudentAnecdotals";
-import UpdateButton from "@/app/components/UpdateButton";
+import StudentAnecdotals from "@/components/StudentAnecdotals";
+import UpdateButton from "@/components/UpdateButton";
 import { useStudent } from "@/app/hooks/useStudent";
 
 import { Flex, Heading } from "@radix-ui/themes";

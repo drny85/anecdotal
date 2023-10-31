@@ -5,7 +5,7 @@ import { AlertDialog, Button, Flex, Table, Text } from "@radix-ui/themes";
 import { deleteDoc, doc } from "firebase/firestore";
 import Link from "next/link";
 import toast from "react-hot-toast";
-import { useStudents } from "../hooks/useStudents";
+import { useStudents } from "../app/hooks/useStudents";
 
 const StudensTable = () => {
   const { students, loading } = useStudents();

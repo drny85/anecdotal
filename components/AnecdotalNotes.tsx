@@ -1,4 +1,3 @@
-import { Fields } from "@/data";
 import { FieldValues } from "@/types";
 import * as Accordion from "@radix-ui/react-accordion";
 import { ChevronDownIcon } from "@radix-ui/react-icons";
