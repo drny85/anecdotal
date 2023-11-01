@@ -1,4 +1,5 @@
 "use client";
+import { useAuth } from "@/context/AuthContext";
 import { Fields } from "@/data";
 import { studentsCollection } from "@/firebase";
 import { Student } from "@/types";
@@ -8,16 +9,19 @@ import { useState } from "react";
 import toast from "react-hot-toast";
 
 const AddStudentButton = () => {
+  const { user } = useAuth();
   const [student, setStudent] = useState<Student>({
     name: "",
     lastName: "",
     fields: Fields,
+    userId: user?.uid!,
   });
   const isValid = student.name && student.lastName;
 
   const onSubmit = async () => {
     try {
-      await addDoc(studentsCollection, { ...student });
+      if (!user) return;
+      await addDoc(studentsCollection, { ...student, userId: user.uid });
       toast.success("Student Added");
     } catch (error) {
       console.log(error);

@@ -1,10 +1,11 @@
 "use client";
-import StudentAnecdotals from "@/components/StudentAnecdotals";
+
 import UpdateButton from "@/components/UpdateButton";
 import { useStudent } from "@/app/hooks/useStudent";
 
 import { Flex, Heading } from "@radix-ui/themes";
 import { useParams, useRouter } from "next/navigation";
+import AnecdotalNotes from "@/components/AnecdotalNotes";
 
 const StudentPage = () => {
   const { id } = useParams<{ id: string }>();
@@ -39,7 +40,7 @@ const StudentPage = () => {
           <UpdateButton fields={student.fields} studentId={id} />
         </Flex>
 
-        <StudentAnecdotals fields={student.fields} />
+        <AnecdotalNotes fields={student.fields} />
       </Flex>
     </div>
   );

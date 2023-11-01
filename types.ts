@@ -3,6 +3,7 @@ export type Student = {
   name: string;
   lastName: string;
   fields: FieldValues[];
+  userId: string;
 };
 
 export type Category =
