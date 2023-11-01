@@ -16,12 +16,10 @@ import { useRouter } from "next/navigation";
 type AuthProps = {
   user: User | null;
   signInWithGoogle: () => void;
-  signOut: () => void;
 };
 const AuthContext = createContext<AuthProps>({
   user: null,
   signInWithGoogle: () => {},
-  signOut: () => {},
 });
 export const AuthProvider = ({ children }: PropsWithChildren) => {
   const [user, setUser] = useState<User | null>(null);
@@ -52,16 +50,8 @@ export const AuthProvider = ({ children }: PropsWithChildren) => {
     }
   };
 
-  const signOut = async () => {
-    try {
-      await signOut();
-    } catch (error) {
-      console.error("Error signing out:", error);
-    }
-  };
-
   return (
-    <AuthContext.Provider value={{ user, signInWithGoogle, signOut }}>
+    <AuthContext.Provider value={{ user, signInWithGoogle }}>
       {children}
     </AuthContext.Provider>
   );

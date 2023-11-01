@@ -20,9 +20,9 @@ const StudensTable = () => {
   if (loading) return <Text>Loading...</Text>;
   if (students.length === 0)
     return (
-      <Flex align={"center"} className="flex-1" direction={"column"} gap={"6"}>
+      <div className="flex items-center justify-center ">
         <Text className="text-lg">No Students Added Yet</Text>
-      </Flex>
+      </div>
     );
   return (
     <div className="max-w-full">
