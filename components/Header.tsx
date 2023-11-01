@@ -13,7 +13,11 @@ const Header = () => {
       <Flex justify="between">
         <DropdownMenu.Root>
           <DropdownMenu.Trigger>
-            <Avatar radius="full" fallback="?" src={user?.photoURL!} />
+            <Avatar
+              radius="full"
+              fallback="?"
+              src={user?.photoURL || "/avatar.jpg"}
+            />
           </DropdownMenu.Trigger>
           <DropdownMenu.Content className="mt-2">
             <DropdownMenu.Item>
