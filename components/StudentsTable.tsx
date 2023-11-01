@@ -29,7 +29,7 @@ const StudensTable = () => {
       <Table.Root variant="surface">
         <Table.Header>
           <Table.Row>
-            <Table.ColumnHeaderCell>Fist name</Table.ColumnHeaderCell>
+            <Table.ColumnHeaderCell>First Name</Table.ColumnHeaderCell>
             <Table.ColumnHeaderCell>Last Name</Table.ColumnHeaderCell>
             <Table.ColumnHeaderCell align="center">
               Action
@@ -50,8 +50,8 @@ const StudensTable = () => {
                 <Flex gap={"3"}>
                   <AlertDialog.Root>
                     <AlertDialog.Trigger>
-                      <Button variant="soft">
-                        <TrashIcon fontSize={28} />
+                      <Button variant="outline" color="red">
+                        <TrashIcon color="gray" fontSize={28} />
                       </Button>
                     </AlertDialog.Trigger>
                     <AlertDialog.Content style={{ maxWidth: 450 }}>
