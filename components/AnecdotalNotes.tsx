@@ -9,6 +9,8 @@ type Props = {
   fields: FieldValues[];
 };
 const AnecdotalNotes = ({ fields }: Props) => {
+  const [open, setOpen] = useState(false);
+  console.log(open);
   const [state, setState] = useState(fields);
   const onChange = (
     e: React.ChangeEvent<HTMLTextAreaElement>,
@@ -64,6 +66,8 @@ const AnecdotalNotes = ({ fields }: Props) => {
                         placeholder={`Write ${f.name}`}
                         value={f.value}
                         onChange={(e) => onChange(e, f.name)}
+                        rows={5}
+                        role="textbox"
                       />
                     </Box>
                   ))}
