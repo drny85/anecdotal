@@ -15,7 +15,7 @@ export const Fields: FieldValues[] = [
       { value: "", name: "Balances needs and rights to self and others" },
       {
         value: "",
-        name: "Solves cocial problems",
+        name: "Solves social problems",
       },
     ],
   },
@@ -25,7 +25,7 @@ export const Fields: FieldValues[] = [
     subvalue: [
       { value: "", name: "Comprehends language" },
       { value: "", name: "Follows directions" },
-      { value: "", name: "Uses an expanding expresive vocabulary" },
+      { value: "", name: "Uses an expanding expressive vocabulary" },
       { value: "", name: "Speaks clearly" },
       { value: "", name: "Uses conventionial grammar" },
       { value: "", name: "Tells about another time or place" },
@@ -44,7 +44,7 @@ export const Fields: FieldValues[] = [
       { value: "", name: "Persists" },
       { value: "", name: "Solves problems" },
       { value: "", name: "Shows curiosity and motivation" },
-      { value: "", name: "Shoes flexibility and inventiveness in thinking" },
+      { value: "", name: "Shows flexibility and inventiveness in thinking" },
       { value: "", name: "Recognizes and recalls" },
       { value: "", name: "Makes connections" },
       { value: "", name: "Uses classification skills" },
