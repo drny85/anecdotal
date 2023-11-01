@@ -51,7 +51,7 @@ const StudensTable = () => {
                   <AlertDialog.Root>
                     <AlertDialog.Trigger>
                       <Button variant="soft">
-                        <TrashIcon />
+                        <TrashIcon fontSize={28} />
                       </Button>
                     </AlertDialog.Trigger>
                     <AlertDialog.Content style={{ maxWidth: 450 }}>
@@ -67,7 +67,7 @@ const StudensTable = () => {
                         </AlertDialog.Cancel>
                         <AlertDialog.Action>
                           <Button
-                            variant="solid"
+                            variant="outline"
                             color="red"
                             onClick={() => onDelete(student.id!)}
                           >
@@ -78,9 +78,9 @@ const StudensTable = () => {
                     </AlertDialog.Content>
                   </AlertDialog.Root>
 
-                  <Link href={`students/${student.id}`}>
-                    <Button>View</Button>
-                  </Link>
+                  <Button variant="outline">
+                    <Link href={`students/${student.id}`}>View</Link>
+                  </Button>
                 </Flex>
               </Table.Cell>
             </Table.Row>
