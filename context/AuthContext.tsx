@@ -8,18 +8,19 @@ import React, {
 } from "react";
 import "firebase/auth";
 
-import { GoogleAuthProvider, User, signInWithPopup } from "firebase/auth";
+import { User, signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "@/firebase";
 import { useRouter } from "next/navigation";
+import toast from "react-hot-toast";
 
 // Initialize Firebase (make sure to configure your own Firebase project
 type AuthProps = {
   user: User | null;
-  signInWithGoogle: () => void;
+  signIn: (email: string, password: string) => void;
 };
 const AuthContext = createContext<AuthProps>({
   user: null,
-  signInWithGoogle: () => {},
+  signIn: () => {},
 });
 export const AuthProvider = ({ children }: PropsWithChildren) => {
   const [user, setUser] = useState<User | null>(null);
@@ -41,17 +42,20 @@ export const AuthProvider = ({ children }: PropsWithChildren) => {
     return () => unsubscribe();
   }, []);
 
-  const signInWithGoogle = async () => {
-    const provider = new GoogleAuthProvider();
+  const signIn = async (email: string, password: string) => {
     try {
-      await signInWithPopup(auth, provider);
+      const { user } = await signInWithEmailAndPassword(auth, email, password);
+      setUser(user);
+      toast.success("Successfully signed in");
     } catch (error) {
-      console.error("Error signing in with Google:", error);
+      const err = error as Error;
+      console.error("Error signing in", error);
+      toast.error(err.message);
     }
   };
 
   return (
-    <AuthContext.Provider value={{ user, signInWithGoogle }}>
+    <AuthContext.Provider value={{ user, signIn }}>
       {children}
     </AuthContext.Provider>
   );
