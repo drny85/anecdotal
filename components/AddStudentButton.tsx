@@ -77,7 +77,7 @@ const AddStudentButton = () => {
                 disabled={!isValid}
                 onClick={onSubmit}
                 color="green"
-                variant="solid"
+                variant="outline"
               >
                 Save
               </Button>
