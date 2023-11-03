@@ -27,7 +27,7 @@ export default function RootLayout({
           grayColor="slate"
           radius="large"
         >
-          <main className="max-w-3xl mx-auto p-4 bg-slate-100">
+          <main className="max-w-3xl mx-auto p-4">
             <AuthProvider>
               <Container>
                 <Toaster />

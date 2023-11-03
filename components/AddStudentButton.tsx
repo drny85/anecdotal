@@ -3,7 +3,7 @@ import { useAuth } from "@/context/AuthContext";
 import { Fields } from "@/data";
 import { studentsCollection } from "@/firebase";
 import { Student } from "@/types";
-import { Button, Dialog, Flex, Text, TextField } from "@radix-ui/themes";
+import { Box, Button, Dialog, Flex, Text, TextField } from "@radix-ui/themes";
 import { addDoc } from "firebase/firestore";
 import { useState } from "react";
 import toast from "react-hot-toast";
@@ -31,7 +31,7 @@ const AddStudentButton = () => {
     <Button>
       <Dialog.Root>
         <Dialog.Trigger>
-          <Button>Add Student</Button>
+          <Text>Add Student</Text>
         </Dialog.Trigger>
         <Dialog.Content style={{ maxWidth: 450 }}>
           <Dialog.Title>Add New Student</Dialog.Title>

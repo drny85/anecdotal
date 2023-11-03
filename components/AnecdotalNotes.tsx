@@ -87,6 +87,7 @@ const AnecdotalNotes = ({ fields }: Props) => {
                         value={f.value}
                         onChange={(e) => onChange(e, f.name)}
                         rows={5}
+                        className="placeholder-orange-600"
                         role="textbox"
                       />
                     </Box>
