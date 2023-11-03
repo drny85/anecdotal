@@ -1,6 +1,5 @@
 import { FieldValues } from "@/types";
 import * as Accordion from "@radix-ui/react-accordion";
-import { ChevronDownIcon } from "@radix-ui/react-icons";
 import { Box, Card, Flex, Grid, Text, TextArea } from "@radix-ui/themes";
 import React, { useEffect, useState } from "react";
 import { BsChevronDown } from "react-icons/bs";
@@ -66,14 +65,15 @@ const AnecdotalNotes = ({ fields }: Props) => {
                             columns={{ initial: "1", md: "2", lg: "3" }}
                             align={"center"}
                             justify={"center"}
-                            className="bg-slate-100 px-2 py-1 rounded-md"
+                            className="bg-slate-100 rounded-md flex-1"
                             ml={"2"}
-                            gap={"2"}
                           >
                             {f.focus?.map((f, i) => (
-                              <Text color="gray" size={"1"} key={i}>
-                                <b>{`${letters[i]})`}</b>- {f}
-                              </Text>
+                              <Box className="flex-grow px-2 py-1" key={i}>
+                                <Text color="gray" size={"1"}>
+                                  <b>{`${letters[i]})`}</b>- {f}
+                                </Text>
+                              </Box>
                             ))}
                           </Grid>
                         </Flex>

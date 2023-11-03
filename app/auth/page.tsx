@@ -22,7 +22,7 @@ const Login = () => {
   };
 
   return (
-    <div className="flex items-center justify-center h-screen flex-col max-w-md">
+    <div className="flex items-center justify-center h-screen flex-col max-w-md mx-auto">
       <Flex
         direction={"column"}
         className="w-full"

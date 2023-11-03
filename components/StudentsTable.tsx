@@ -45,7 +45,7 @@ const StudensTable = () => {
         </Table.Header>
         <Table.Body>
           {students.map((student) => (
-            <Table.Row key={student.id}>
+            <Table.Row key={student.id} align={"center"}>
               <Table.Cell className="capitalize w-1/3">
                 {student.name}
               </Table.Cell>
@@ -54,7 +54,7 @@ const StudensTable = () => {
               </Table.Cell>
 
               <Table.Cell className="w-1/4">
-                <Flex gap={"3"}>
+                <Flex gap={"3"} align={"center"} justify={"center"}>
                   <AlertDialog.Root>
                     <AlertDialog.Trigger>
                       <Button variant="outline" color="red">
