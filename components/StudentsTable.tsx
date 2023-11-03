@@ -1,7 +1,14 @@
 "use client";
 import { studentsCollection } from "@/firebase";
 import { TrashIcon } from "@radix-ui/react-icons";
-import { AlertDialog, Button, Flex, Table, Text } from "@radix-ui/themes";
+import {
+  AlertDialog,
+  Button,
+  Container,
+  Flex,
+  Table,
+  Text,
+} from "@radix-ui/themes";
 import { deleteDoc, doc } from "firebase/firestore";
 import Link from "next/link";
 import toast from "react-hot-toast";
@@ -25,8 +32,8 @@ const StudensTable = () => {
       </div>
     );
   return (
-    <div className="max-w-full">
-      <Table.Root variant="surface">
+    <Container width={"100%"} className="mx-auto w-full">
+      <Table.Root variant="surface" className="w-full">
         <Table.Header>
           <Table.Row>
             <Table.ColumnHeaderCell>First Name</Table.ColumnHeaderCell>
@@ -87,7 +94,7 @@ const StudensTable = () => {
           ))}
         </Table.Body>
       </Table.Root>
-    </div>
+    </Container>
   );
 };
 

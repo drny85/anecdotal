@@ -1,10 +1,10 @@
 import { FieldValues } from "@/types";
 import * as Accordion from "@radix-ui/react-accordion";
 import { ChevronDownIcon } from "@radix-ui/react-icons";
-import { Box, Card, Flex, Text, TextArea } from "@radix-ui/themes";
+import { Box, Card, Flex, Grid, Text, TextArea } from "@radix-ui/themes";
 import React, { useEffect, useState } from "react";
 import { BsChevronDown } from "react-icons/bs";
-
+const letters = "abcdefghijklmnopqrstuvwxyz";
 type Props = {
   fields: FieldValues[];
 };
@@ -48,12 +48,6 @@ const AnecdotalNotes = ({ fields }: Props) => {
               <Accordion.Item className="AccordionItem" value={c.value}>
                 <Accordion.Trigger className="text-xl font-semibold flex items-center justify-between w-full">
                   {c.id} - {c.value}
-                  {/* <ChevronDownIcon
-                  className="AccordionChevron"
-                  aria-hidden
-                  fontSize={36}
-                  fontWeight={"bold"}
-                /> */}
                   <BsChevronDown className="AccordionChevron font-bold h-6 w-8" />
                 </Accordion.Trigger>
                 <Accordion.Content>
@@ -62,8 +56,34 @@ const AnecdotalNotes = ({ fields }: Props) => {
                       <Text className="font-semibold">
                         {i + 1}- {f.name}
                       </Text>
+                      {f.focus && f.focus.length > 0 && (
+                        <Flex align={"center"} py="1" ml={"2"}>
+                          <Text color="gray" className="font-semibold text-sm">
+                            Focus:
+                          </Text>
+
+                          <Grid
+                            columns={{ initial: "1", md: "2", lg: "3" }}
+                            align={"center"}
+                            justify={"center"}
+                            className="bg-slate-100 px-2 py-1 rounded-md"
+                            ml={"2"}
+                            gap={"2"}
+                          >
+                            {f.focus?.map((f, i) => (
+                              <Text color="gray" size={"1"} key={i}>
+                                <b>{`${letters[i]})`}</b>- {f}
+                              </Text>
+                            ))}
+                          </Grid>
+                        </Flex>
+                      )}
                       <TextArea
-                        placeholder={`Write ${f.name}`}
+                        placeholder={
+                          f.focus && f.focus.length > 0
+                            ? f.focus.join(" \n")
+                            : `Write ${f.name}`
+                        }
                         value={f.value}
                         onChange={(e) => onChange(e, f.name)}
                         rows={5}

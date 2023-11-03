@@ -1,4 +1,4 @@
-import { Category, FieldValues } from "./types";
+import { FieldValues } from "./types";
 
 export const Fields: FieldValues[] = [
   {
@@ -101,6 +101,81 @@ export const Fields: FieldValues[] = [
         name: "Demonstrates progress in listening to and understanding Language",
       },
       { value: "", name: "Demonstrates progress in speaking English" },
+    ],
+  },
+  {
+    id: 8,
+    value: "Physical",
+    subvalue: [
+      { value: "", name: "Demonstrates traveling skills" },
+      { value: "", name: "Demonstrates balancing skills" },
+      { value: "", name: "Demonstrate gross-motor manipulative skills" },
+      {
+        value: "",
+        name: "Demonstrates fine-motor strength and coordination",
+        focus: ["Uses fingers and hands", "Uses writing and drawing tools"],
+      },
+    ],
+  },
+  {
+    id: 9,
+    value: "Literacy",
+    subvalue: [
+      {
+        value: "",
+        name: "Demonstrates phonological awareness",
+        focus: [
+          "Notices and discriminates rhyme",
+          "Notices and discrimanates alliteration",
+          "Notices and discriminate snaller and smaller units of sound",
+        ],
+      },
+      {
+        value: "",
+        name: "Demonstrates knowledge of the alphabet",
+        focus: ["Identifies and names letters", "Uses letter-sound knowledge"],
+      },
+      {
+        value: "",
+        name: "Demonstrates knowledge of print and its uses",
+        focus: ["Uses and appreciates books", "Uses print concepts"],
+      },
+      {
+        value: "",
+        name: "Comprehends and responds to books and others texts",
+        focus: [
+          "Interacts during read-alouds and book conversations",
+          "Uses emergent reading skills",
+          "Retells stories",
+        ],
+      },
+      {
+        value: "",
+        name: "Demonstrates emergent writing skills",
+        focus: ["Writes name", "Writes no convey meaning"],
+      },
+    ],
+  },
+  {
+    id: 10,
+    value: "Mathematics",
+    subvalue: [
+      {
+        name: "Uses number concepts and operations",
+        value: "",
+        focus: [
+          "Counts",
+          "Quantifies",
+          "Connects numerals with their quantities",
+        ],
+      },
+      {
+        value: "",
+        name: "Explores and describes spatial relantionships and shapes",
+        focus: ["Understands spatial relationships", "Understands shapes"],
+      },
+      { value: "", name: "Compares and measures" },
+      { value: "", name: "Demonstrates knowledge of patterns" },
     ],
   },
 ];

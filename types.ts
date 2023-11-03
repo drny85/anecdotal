@@ -13,7 +13,10 @@ export type Category =
   | "Science & Tecnology"
   | "Social Studies"
   | "The Arts"
-  | "English Language Acquisition";
+  | "English Language Acquisition"
+  | "Literacy"
+  | "Mathematics"
+  | "Physical";
 
 export type Anecdotal = {
   id?: string;
@@ -28,6 +31,7 @@ export type Topic = {
 export type Field = {
   value: string;
   name: string;
+  focus?: string[];
 };
 
 export type FieldValues = { id: number; value: Category; subvalue: Field[] };
